@@ -1,0 +1,79 @@
+<!-- <?html
+$con = mysqli_connect('localhost', 'root');
+if (isset($_POST['signup'])) {
+  mysqli_select_db($con, 'kbbms');
+  $fname = $_POST['fname'];
+  $phonenumber = $_POST['phonenumber'];
+  $email = $_POST['email'];
+  $birthdate = $_POST['birthdate'];
+  $age = $_POST['age'];
+  //$ = $_POST[''];
+  $bloodgrp = $_POST['bloodgrp'];
+  $gender = $_POST['gender'];
+  $weight = $_POST['weight'];
+  $disease = $_POST['disease'];
+  $query = "INSERT INTO donate(fname,phonenumber,email,birthdate,age,bloodgrp,gender,weight,disease) 
+  VALUES('$fname','$phonenumber','$email','$birthdate','$age','$bloodgrp','$gender','$weight','$disease')";
+  mysqli_query($con, $query);
+}
+
+?> -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Donation Form</title>
+  <link rel="stylesheet" href="blooddonationform.css">
+</head>
+
+<body>
+  <img src="" alt="" width="100" class="header-logo-left" />
+  <div id="logo"><img src="./Images/bb_logo(white).png"></a></div>
+  <h1 id="title">Blood Donation Form</h1>
+  <br>
+  <p>
+  <h3>Note - Please answer the following questions correctly. This will help to protect you and the patient who receives your blood</h3>
+  </p>
+
+  <form action="blooddonationform.html" method="post" name="signup">
+    <label id="fname">Name*<input type="text" name="fname" id="fname" placeholder="Please enter your name" required /></label><br>
+    <label id="name-label">Phone Number*<input type="tel" name="phonenumber" id="phnum" placeholder="Please enter your number" required /></label><br>
+    <label id="email-label">Email* <input type="email" name="email" id="email" placeholder="Please enter your email" required /></label><br>
+    <label id="bday-label">Birthdate*<input type="text" name="birthdate" id="birth" placeholder="DD-MM-YYYY" required /></label><br>
+    <label id="number-label">Age* <input type="number" name="age" id="number" min="18" max="50" placeholder="Age" required /></label><br>
+    <label>Select your blood group</label>
+    <select id="bloodgrp" name="bloodgrp" required>
+      <option value="a+">A+</option>
+      <option value="a-">A-</option>
+      <option value="b+">B+</option>
+      <option value="b-">B-</option>
+      <option value="o+">O+</option>
+      <option value="o-">O-</option>
+      <option value="ab+">AB+</option>
+      <option value="ab-">AB-</option>
+    </select>
+
+    <label>Select your gender</label>
+    <select id="gender" name="gender" required>
+      <option value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
+    <label id="weight">Enter your weight</label>
+    <input type="number" id="weight" name="weight" min="20" max="200">
+    <label id="disease">Enter disease (if any)</label>
+    <input type="text" id="disease" name="disease">
+    <label id="certi">Upload certificate from doctor</label>
+    <input type="file" id="certi" name="certi">
+
+
+    <input type="submit" value="Submit" name="signup" id="submit" />
+  </form>
+  <br>
+</body>
+
+
+</html>

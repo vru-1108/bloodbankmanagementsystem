@@ -1,0 +1,64 @@
+<!-- <?html
+$con = mysqli_connect('localhost', 'root');
+if (isset($_POST['signup'])) {
+  mysqli_select_db($con, 'kbbms');
+  $uname = $_POST['uname'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $bloodrequired = $_POST['bloodrequired'];
+  $amountrequired = $_POST['amountrequired'];
+  $query = "INSERT INTO request(uname,email,phone,bloodrequired,amountrequired) 
+values('$uname','$email','$phone','$bloodrequired','$amountrequired')";
+  //echo "$query";
+  mysqli_query($con, $query);
+}
+?> -->
+<html>
+
+<head>
+  <meta charset="utf8mb4_general_ci">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Request Form</title>
+  <link rel="stylesheet" href="request.css">
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <form action="request.html" method="post">
+    <div id="logo"><img src="./Images/bb_logo(white).png"></a></div>
+    <h1>Blood Request Form</h1>
+
+
+    <fieldset>
+      <label for="uname">Name: &#x2a;</label>
+      <input type="text" id="uname" name="uname" required>
+
+      <label for="mail">Email: &#x2a;</label>
+      <input type="email" id="mail" name="email" required>
+      <label for="phone">Phone: &#x2a;</label>
+      <input type="tel" id="phone" name="phone" required>
+    </fieldset>
+    <fieldset>
+      <label for="bloodgrp">Blood group required: &#x2a;</label>
+      <select id="bloodgrp" name="bloodrequired" required>
+        <option value="ab+">AB+</option>
+        <option value="ab-">AB-</option>
+        <option value="a+">A+</option>
+        <option value="a-">A-</option>
+        <option value="b+">B+</option>
+        <option value="b-">B-</option>
+        <option value="o+">O+</option>
+        <option value="o-">O-</option>
+      </select>
+      <label for="amountrequired">Amount required in units
+        &#x2a;
+        <input type="text" id="amountrequired" name="amountrequired" required="">
+    </fieldset>
+    <a href=""><button type="submit" name="signup">Submit</button></a>
+  </form>
+
+</body>
+
+</html>
